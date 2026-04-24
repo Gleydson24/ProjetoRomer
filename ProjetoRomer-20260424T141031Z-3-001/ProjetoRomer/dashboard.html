@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - StudyFlow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+
+            <h2>StudyFlow</h2>
+
+            <a href="add_tarefa.html">
+                Adicionar tarefas
+            </a>
+
+        </aside>
+
+        <main class="content">
+
+            <h1>
+                Painel de Estudos
+            </h1>
+
+            <input
+            type="text"
+            id="filtro"
+            placeholder="Filtrar por matéria"
+            onkeyup="filtrar()"
+            >
+
+            <div class="tasks-container">
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
