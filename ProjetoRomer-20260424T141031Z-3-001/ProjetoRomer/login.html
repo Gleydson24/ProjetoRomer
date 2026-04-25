@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - StudyFlow</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS correto do Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 </head>
+
 <body class="center-body">
 
     <div class="card">
 
         <h1>Login</h1>
 
-        <form>
+        <!-- FORMULÁRIO FUNCIONAL -->
+        <form method="POST">
 
-            <label>Email</label>
-            <input type="email" placeholder="Digite seu email">
+    <label>Usuário</label>
+    <input type="text" name="nome" required>
 
-            <label>Senha</label>
-            <input type="password" placeholder="Digite sua senha">
+    <label>Senha</label>
+    <input type="password" name="senha" required>
 
-            <a href="dashboard.html" class="btn">
-                Entrar
-            </a>
+    <button type="submit" class="btn">
+        Entrar
+    </button>
 
-        </form>
+</form>
 
     </div>
 
