@@ -4,38 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Tarefa</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_tarefa.css') }}">
 </head>
 <body>
 
     <div class="layout">
 
+        <!-- SIDEBAR -->
         <aside class="sidebar">
 
             <h2>StudyFlow</h2>
 
-            <a href="dashboard.html">
+            <a href="{{ url_for('dashboard') }}">
                 Voltar
+            </a>
+
+            <a href="{{ url_for('logout') }}">
+                Logout
             </a>
 
         </aside>
 
+        <!-- CONTEÚDO -->
         <main class="content">
 
             <div class="card large-card">
 
-                <h1>Adicionar tarefa</h1>
+                <h1>
+                    {% if tarefa %}Editar Tarefa{% else %}Adicionar Tarefa{% endif %}
+                </h1>
 
-                <form id="taskForm">
+                <form method="POST">
 
                     <label>Título</label>
-                    <input type="text" id="titulo">
-
-                    <label>Matéria</label>
-                    <input type="text" id="materia">
+                    <input 
+                        type="text" 
+                        name="titulo"
+                        value="{{ tarefa.titulo if tarefa else '' }}"
+                        required
+                    >
 
                     <button class="btn">
-                        Adicionar tarefa
+                        {% if tarefa %}Salvar{% else %}Adicionar tarefa{% endif %}
                     </button>
 
                 </form>
@@ -45,8 +57,6 @@
         </main>
 
     </div>
-
-    <script src="script.js"></script>
 
 </body>
 </html>
