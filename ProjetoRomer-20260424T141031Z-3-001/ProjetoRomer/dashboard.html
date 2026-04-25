@@ -4,44 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - StudyFlow</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
 </head>
+
 <body>
 
     <div class="layout">
 
+        <!-- SIDEBAR -->
         <aside class="sidebar">
 
             <h2>StudyFlow</h2>
 
-            <a href="add_tarefa.html">
-                Adicionar tarefas
+            <a href="{{ url_for('add_tarefa') }}">
+                + Adicionar tarefa
+            </a>
+
+            <a href="{{ url_for('logout') }}">
+                Logout
             </a>
 
         </aside>
 
+        <!-- CONTEÚDO -->
         <main class="content">
 
-            <h1>
-                Painel de Estudos
-            </h1>
+            <h1>Painel de Estudos</h1>
 
-            <input
-            type="text"
-            id="filtro"
-            placeholder="Filtrar por matéria"
-            onkeyup="filtrar()"
-            >
-
+            <!-- Lista de tarefas (Flask) -->
             <div class="tasks-container">
+
+                {% for tarefa in tarefas %}
+                    <div class="task-card">
+
+                        <span>{{ tarefa.titulo }}</span>
+
+                        <div class="actions">
+                            <a href="{{ url_for('edit', id=tarefa.id) }}" class="edit">Editar</a>
+                            <a href="{{ url_for('delete', id=tarefa.id) }}" class="delete">Excluir</a>
+                        </div>
+
+                    </div>
+                {% endfor %}
 
             </div>
 
         </main>
 
     </div>
-
-    <script src="script.js"></script>
 
 </body>
 </html>
