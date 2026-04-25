@@ -1,0 +1,59 @@
+/* Centralização total */
+.center-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: Arial, sans-serif;
+}
+
+/* Container */
+.home-container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Título */
+.home-container h1 {
+    margin-bottom: 10px;
+}
+
+/* Texto */
+.home-container p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Botões */
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Botão padrão */
+.btn {
+    display: block;
+    padding: 10px;
+    background: #667eea;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* Botão outline */
+.btn-outline {
+    background: transparent;
+    border: 2px solid #667eea;
+    color: #667eea;
+}
+
+/* Hover */
+.btn:hover {
+    opacity: 0.9;
+}

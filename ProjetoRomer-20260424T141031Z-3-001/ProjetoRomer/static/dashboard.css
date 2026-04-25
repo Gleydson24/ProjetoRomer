@@ -1,0 +1,79 @@
+/* Layout geral */
+.layout {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #2d3748;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background: #4a5568;
+}
+
+/* Conteúdo */
+.content {
+    flex: 1;
+    padding: 30px;
+    background: #f4f6f8;
+}
+
+/* Título */
+.content h1 {
+    margin-bottom: 20px;
+}
+
+/* Container de tarefas */
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Card de tarefa */
+.task-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Ações */
+.actions a {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.edit {
+    background: orange;
+}
+
+.delete {
+    background: red;
+}
